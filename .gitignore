@@ -1,0 +1,9 @@
+# runtime resources
+
+# 3rd-party dependencies
+.composer/
+vendor/
+
+# Release archives
+*.tar.gz
+*.zip

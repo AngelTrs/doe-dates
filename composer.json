@@ -1,0 +1,13 @@
+{
+    "name": "angeltrs/doe-days",
+    "type": "project",
+    "license": "apache",
+    "authors": [
+        {
+            "name": "AngelTrs"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^2.66"
+    }
+}

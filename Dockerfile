@@ -2,6 +2,8 @@ FROM php:7.4-apache as base
 
 COPY . /var/www
 
+RUN chown www-data /var/www/data/*
+
 # install composer dependencies
 RUN apt-get update && apt-get install -y \
     zlib1g-dev \

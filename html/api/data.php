@@ -44,6 +44,6 @@ function handle_post_request() {
     print "something went wrong, caught ya";
     exit();
   }
-  header( "refresh:3;url=/admin" );
+  header( "refresh:3;url=/" );
   echo "Changes Saved. Returning in 3 seconds.";
 }

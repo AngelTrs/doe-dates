@@ -30,6 +30,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSHKEY }}
         script: |
-          cd "~/angeltrs/doe-dates"
+          cd ~/angeltrs/doe-dates
           docker-compose down
           docker-compose up --build -d

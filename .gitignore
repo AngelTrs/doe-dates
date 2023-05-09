@@ -1,4 +1,5 @@
 # runtime resources
+credentials.php
 
 # 3rd-party dependencies
 .composer/

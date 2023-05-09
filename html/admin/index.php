@@ -1,3 +1,8 @@
+<?php declare(strict_types=1);
+define('ROOT','/var/www');
+require ROOT . '/basic-auth.php';
+requireAuth();
+?>
 <!DOCTYPE html>
 <html>
 <head>

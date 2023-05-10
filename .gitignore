@@ -4,6 +4,7 @@ credentials.php
 # 3rd-party dependencies
 .composer/
 vendor/
+/html/css/
 
 # Release archives
 *.tar.gz

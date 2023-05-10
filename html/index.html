@@ -14,22 +14,33 @@
       x-init="data = await (await fetch('/api/index.php')).json()"
       >
       <h3>Hi Lisa!</h3>
-      <div>Today is
-        <span style="font-weight:bold"x-text="data.today"></span>.
-      </div>
-      <div>
-        Your next day off is
-        <span style="font-weight:bold" x-text="data.next_holiday"></span>,
-        <span x-text="data.next_holiday_remaining"></span> workdays away.
-      </div>
-      <div style="margin-top: 2em">The last day of school is 
-        <span style="font-weight:bold" x-text="data.last_day"></span>.
-      </div>
-      <div>
-        There are
-        <span style="font-size: 1.5em; font-weight:bold" x-text="data.last_day_remaining">
-        </span> workdays remaining in the school year.
-      </div>
+      <template x-if="!data.last_day_passed">
+        <div>
+          <div>Today is
+            <span style="font-weight:bold"x-text="data.today"></span>.
+          </div>
+          <div>
+            Your next day off is
+            <span style="font-weight:bold" x-text="data.next_holiday"></span>,
+            <span x-text="data.next_holiday_remaining"></span> workdays away.
+          </div>
+          <div style="margin-top: 2em">The last day of school is 
+            <span style="font-weight:bold" x-text="data.last_day"></span>.
+          </div>
+          <div>
+            There are
+            <span style="font-size: 1.5em; font-weight:bold" x-text="data.last_day_remaining">
+            </span> workdays remaining in the school year.
+          </div>
+        </div>
+      </template>
+      <template x-if="data.last_day_passed">
+        <div>
+          <span style="font-weight:bold">You Survived!</span><br/>
+          The freakin' school year is over.<br/>
+          Enjoy your summer vacation to the fullest.
+        </div>
+      </template>
     </div>
   </main>
 </body>

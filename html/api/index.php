@@ -37,7 +37,6 @@ foreach ($holidays as $holiday) {
 
 $lastDay = new Carbon($json->last_day, $tz);
 $lastDayRemaining = $today->diffInWeekdays($lastDay);
-$lastDayRemaining += 1; // add 1 because last-day is inclusive
 $lastDayRemaining -= $daysOff;
 
 $output = array(
@@ -47,6 +46,7 @@ $output = array(
 	"next_holiday_remaining" => $nextHolidayRemaining,
 	"last_day" => $lastDay->toFormattedDayDateString(),
 	"last_day_remaining" => $lastDayRemaining,
+	"last_day_passed" => (!$lastDay->isFuture() && !$lastDay->isToday())
 );
 
 header("X-Robots-Tag: noindex, nofollow", true);

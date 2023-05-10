@@ -8,6 +8,18 @@
         }
     ],
     "require": {
-        "nesbot/carbon": "^2.66"
+        "nesbot/carbon": "^2.66",
+        "picocss/pico": "^1.5"
+    },
+    "scripts": {
+        "copyPico": [
+            "cp -r vendor/picocss/pico/css/ html/"
+        ],
+        "post-update-cmd": [
+            "@copyPico"
+        ],
+        "post-install-cmd": [
+            "@copyPico"
+        ]
     }
 }

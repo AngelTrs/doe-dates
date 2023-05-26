@@ -49,8 +49,8 @@ $lastDayRemaining = $today->diffInWeekdays($lastDay);
 $lastDayRemaining -= $daysOff;
 
 if ($today->isWeekday() && (!$todayIsHoliday) && $today->isAfter(Carbon::createFromTime(15, 0, 0, $tz))) {
-    $nextHolidayRemaining -= 0;
-    $lastDayRemaining -= 0;
+    $nextHolidayRemaining -= 1;
+    $lastDayRemaining -= 1;
 }
 
 $output = array(

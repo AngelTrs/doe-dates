@@ -32,6 +32,7 @@ foreach ($holidays as $holiday) {
 		$nextHoliday = $holiday->name;
 		$nextHolidayDate = $dt->toFormattedDayDateString();
 		$nextHolidayRemaining = $today->diffInWeekdays($dt);
+        $nextHolidayRemaining -= 1;
 		break;
 	}
 }
@@ -47,11 +48,6 @@ $lastDay = new Carbon($json->last_day, $tz);
 $lastDay->hour = 15;
 $lastDayRemaining = $today->diffInWeekdays($lastDay);
 $lastDayRemaining -= $daysOff;
-
-if ($today->isWeekday() && (!$todayIsHoliday) && $today->isAfter(Carbon::createFromTime(15, 0, 0, $tz))) {
-    $nextHolidayRemaining -= 1;
-    $lastDayRemaining -= 1;
-}
 
 $output = array(
 	"today" => $today->toFormattedDayDateString(),

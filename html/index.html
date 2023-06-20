@@ -19,11 +19,13 @@
           <div>Today is
             <span style="font-weight:bold"x-text="data.today"></span>.
           </div>
-          <div>
-            Your next day off is
-            <span style="font-weight:bold" x-text="data.next_holiday"></span>,
-            <span x-text="data.next_holiday_remaining"></span> workdays away.
-          </div>
+          <template x-if="!data.last_day_passed == 'none'">
+            <div>
+              Your next day off is
+              <span style="font-weight:bold" x-text="data.next_holiday"></span>,
+              <span x-text="data.next_holiday_remaining"></span> workdays away.
+            </div>
+          </template>
           <div style="margin-top: 2em">The last day of school is 
             <span style="font-weight:bold" x-text="data.last_day"></span>.
           </div>

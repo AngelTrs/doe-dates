@@ -19,7 +19,7 @@
           <div>Today is
             <span style="font-weight:bold"x-text="data.today"></span>.
           </div>
-          <template x-if="!data.last_day_passed == 'none'">
+          <template x-if="data.next_holiday!='none'">
             <div>
               Your next day off is
               <span style="font-weight:bold" x-text="data.next_holiday"></span>,

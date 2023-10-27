@@ -14,7 +14,7 @@ $today = new Carbon($tz);
 # calculate next holiday
 $holidays = $json->holidays;
 $todayIsHoliday = false;
-$nextHoliday = "done";
+$nextHoliday = "none";
 $nextHolidayDate = "00000000";
 $nextHolidayRemaining = "0";
 
